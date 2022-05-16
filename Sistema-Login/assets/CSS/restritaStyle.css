@@ -1,0 +1,109 @@
+body {
+    background-image: linear-gradient(179deg, #FA8072 45%, #DCDCDC 95%);
+    margin: 0%;
+}
+
+nav {
+    width: 20%;
+    height: 625px;
+    float: left;
+    background-color: #DCDCDC;
+}
+
+h1 {
+    font-size: 23pt;
+    text-align: center;
+    font-family: 'Honey', Courier, monospace;
+    color: #FF00F0;
+}
+
+h2 {
+    text-align: center;
+    font-family: 'Honey', Courier, monospace;
+    font-size: 18pt;
+    color: #FF00F0;
+
+}
+
+ul {
+    list-style-type: none;
+    padding: 0%;
+    width: 99%;
+    font-size: 18pt;
+}
+
+li a {
+    display: block;
+    text-decoration: none;
+    border: none;
+    background-color: #FF00F0;
+    color: #DCDCDC;
+    font-family: 'Honey', Courier, monospace;
+    text-align: center;
+    padding: 10px 16px;
+    margin-left: 1%;
+    margin-top: 1%;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+li a:hover {
+    background-color: #DCDCDC;
+    color: #f759f7;
+}
+
+.img2 {
+    width: 45%;
+    height: auto;
+    margin-top: 95%;
+    margin-left: 25%;
+
+}
+
+.boxH {
+    padding: 0%;
+    background-color: #DCDCDC;
+}
+
+section {
+    margin-left: 10%;
+    margin-top: 4%;
+    display: inline-block;
+    background-color: #DCDCDC;
+    width: 60%;
+    height: 455px;
+    border: 1px solid #FF00F0;
+}
+
+table {
+    width: 90%;
+    padding: 1%;
+    margin-left: 5%;
+    border-collapse: collapse;
+}
+
+
+
+th {
+    width: 25%;
+    color: #DCDCDC;
+    background-color: #FF00F0;
+    font-size: 20pt;
+    font-family: 'Honey', Courier, monospace;
+}
+
+tr {
+    border-bottom: 1px solid #f759f7;
+    width: auto;
+    height: 55px;
+}
+
+td {
+    text-align: center;
+}
+
+
+@font-face {
+    font-family: 'Honey';
+    src: url('../../../Honey\ Notes\ DEMO.ttf') format('truetype');
+}
