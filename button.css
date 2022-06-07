@@ -1,0 +1,39 @@
+a{
+    display: block;
+    width: auto;
+    height: auto;
+    line-height: 30px;
+    font-size: 16px;
+    font-family: arial;
+    text-decoration: none;
+    color:black;
+    letter-spacing: 2px;
+    text-align: center;
+    position: relative;
+    transition: all .85s;
+    padding: 6px;
+  }
+  
+  a span{
+    position: relative;
+    z-index: 2;
+  }
+  
+  a:after{
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #EDA4E2;
+    transition: all .85s;
+  }
+  
+  a:hover{
+    color: #fff;
+  }
+  
+  a:hover:after{
+    width: 100%;
+  }

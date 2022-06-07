@@ -1,0 +1,158 @@
+*{
+    margin: 0;
+    padding: 0;
+
+}
+body{
+  background-color: #D1C8E0;
+}
+.cards{
+    clear: both;
+    width: auto;
+    height: auto;
+
+}
+tr{
+    padding: 2px;
+}
+.col-sm{
+    padding: 2%;
+}
+
+.carroca{
+    width: auto;
+}
+
+.sobreNos{
+    width: auto;
+    height: 750px;
+}
+.funcionarios{
+    width: auto;
+    height: 750px;
+}
+
+
+.navBar{
+    margin-top: 0%;
+}
+
+li{
+    padding: 40px;
+}
+
+.btnCard{
+    padding: 1%;
+    background-color:#DCDCDC;
+    color: black; 
+    text-align: center;
+    border-radius: 5px;
+}
+.btnCard:hover{
+    background-color: #EDA4E2;
+    color:black;
+}
+/*CARD FUNCIONARIO*/
+.d-flex .col-sm-2{
+
+    height: 100%;
+    width: 32%;
+    padding: 1px;
+    margin: 1px;
+}
+.btn{
+    content: '#s';
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+}
+
+h3{
+    font-size: 50px;
+    text-align: center;
+    color:#000000;
+    font-family:'Honey', Courier, monospace;
+}
+
+h5{
+    color: rgb(26, 26, 26);
+    font-size: 30px;
+    font-family:'Honey', Courier, monospace;
+}
+
+span {
+    font-size: 25px;
+    font-family:'Honey', Courier, monospace;
+}
+
+.texto{
+    padding: 5%;
+    font-size:17pt;
+}
+.card{
+    border-radius: 5px;
+    background-color:#DCDCDC;
+}
+
+.butao{
+    width: 150px;
+    padding: 1%;
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+    border: 2px solid black;
+    
+}
+
+.butao:hover {
+    background-color: black; 
+    color: white;
+  }
+
+.mudal{
+    padding: 1%;
+    width: 100%;
+    margin: 8px 0;
+    border: 1.5px solid black;
+
+}
+
+label{
+    text-align: center;
+}
+
+.modal-content{
+    background-color: #EDA4E2;
+}
+
+
+.img3{
+    padding: 1%;
+}
+.box{
+    padding: 1%;
+    width: 100%;
+}
+
+.zoom {
+    transition: transform .2s; 
+ }
+ 
+ .zoom:hover {
+     padding: 1% 1%;
+   transform: scale(1.1);
+ }
+
+ .header{
+    background-color: #DCDCDC;
+    padding: 0.5%;
+    margin-bottom: 1.2%;
+ }
+
+
+/*FONTES*/
+@font-face {
+    font-family: 'Honey';
+    src: url('Honey Notes DEMO.ttf') format('truetype');
+}
+ 
