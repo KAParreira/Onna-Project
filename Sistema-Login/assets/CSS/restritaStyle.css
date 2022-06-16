@@ -7,20 +7,13 @@ nav {
 }
 /*Editando feito Um Condenado QAAAAAAAAAAAAAAAAAAA*/
 body{
-    background-color: gray;
+    background-color: #D1C8E0;
 }
-* {
-    margin: 0px;
-    padding: 0px;
-  }
-
   #sidebar {
     position: absolute;
-    width: 200px;
+    width: 190px;
     height: 100%;
     background: #DCDCDC;
-    left: -250px;
-    transition: .4s;
   }
 
   #sidebar ul li {
@@ -29,38 +22,23 @@ body{
     font-size: 20px;
     padding: 20px 24px;
   }
-
-  #sidebar .toggle-btn {
-    position: absolute;
-    top: 30px;
-    left: 275px;
-  }
-
-  .toggle-btn span {
-    width: 45px;
-    height: 4px;
-    background: #000;
-    display: block;
-    margin-top: 4px;
-  }
-
-  #sidebar.active {
-    left: 0;
-  }
 /**/
 .tabelinha{
-    width: auto;
+    width: 85%;
+    border-radius: 35px;
     height: auto;
+    text-align: center;
     background-color: white;
     /* Centralizar na vertical e na horizontal */
     position: absolute;
-    top: 10%;
+    top: 9%;
     left: 15%;
     }
 h1 {
     text-align: center;
+    padding: 0.5%;
     font-family: 'Honey', Courier, monospace;
-    color: #f759f7;
+    color: #D1C8E0;
     /* border: 2px solid #000000; */
 }
 #p1{
@@ -96,14 +74,14 @@ li a {
     text-align: center;
     padding: 10px 16px;
     margin-left: 1%;
-    margin-top: 1%;
+    margin-top: 1.5%;
     transition-duration: 0.4s;
     cursor: pointer;
 }
 
 li a:hover {
-    background-color: #b8a1b8;
-    color: #DCDCDC;
+    background-color: #D1C8E0;
+    color: white;
 }
 
 .img2 {
@@ -120,18 +98,8 @@ li a:hover {
     background-color: #DCDCDC
 }
 
-section {
-    margin-left: 10%;
-    margin-top: 4%;
-    display: inline-block;
-    background-color: #DCDCDC;
-    width: 80%;
-   margin-bottom: 13.5%;
-    border: 2px solid #000000;
-}
-
 table {
-    border: 2px solid #000000;
+    border: 1px solid #000000;
 /*     
     width: 90%;
     padding: 1%;
@@ -149,14 +117,14 @@ th {
     padding: 10px;
 }
 tr {
-    padding: 10px;
+    padding: 5px;
     text-align: center;
     border-bottom: 0.5px solid #000000;
     width: auto;
     height: auto; 
 }
 td {
-    padding: 10px;
+    padding: 5px;
     border:0.5px solid black;
      text-align: center;
 }
@@ -194,31 +162,42 @@ td {
     margin-top: 1%;
 }
 
+.box{
+    margin-bottom: 5%;
+}
+
 /* The Close Button */
 .close {
     color: #aaaaaa;
+    margin-left: 65%;
     float:right;
     font-size: 35px;
     font-weight: bold;
 }
 
 #myBtn {
-    border: none;
+    margin-left: 37.5%;;
     padding: 1%;
     margin-right: 15%;
-    margin-left: 15%;;
     margin-top: 1%;
     margin-bottom: 1%;
-    width: 70%;
+    width: 25%;
+    display: block;
+    text-decoration: none;
+    border: 0.2px initial black;
     background-color: white;
-    color: black;
-    border-radius: 3px;
-    border: 1.5px solid black;
+    color:#000000;
+    font-family: 'Honey', Courier, monospace;
+    font-size: 20pt;
+    text-align: center;
+    padding: 4px 8px;
+    transition-duration: 0.4s;
+    cursor: pointer;
     
 }
 
 #myBtn:hover {
-    background-color: black; 
+    background-color: #D1C8E0; 
     color: white;
 }
 

@@ -1,6 +1,6 @@
 <?php
   
- // header("Location: ../cadastro-cliente.php");
+  header("Location: ../cadastro-cliente.php");
 
   require_once("Paciente.php");
 

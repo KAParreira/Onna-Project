@@ -1,14 +1,7 @@
 <?php
 include_once("./valida-sentinela.php");
-require_once("modal/Profissional.php");
-try {
-    $profissional = new Profissional();
-    $listaprofissional = $profissional->listar();
-} catch (Exception $e) {
-    echo $e->getMessage();
-}
 ?>
-
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -18,55 +11,58 @@ try {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="../../IMG/icon.png">
     <link rel="stylesheet" href="../assets/CSS/restritaStyle.css">
-    <title>Funcionario</title>
+    <title>Agenda</title>
 </head>
 
-
 <body>
+
     <div id="sidebar">
         <ul>
             <li><a href="index-area-restrita.php">Home</a></li>
             <li><a href="cadastro-cliente.php">Paciente</a></li>
-            <li><a href="#">Funcionário</a></li>
-            <li><a href="form-agenda.php">Agendamento</a></li>
+            <li><a href="cadastro-funcionario.php">Funcionario</a></li>
+            <li><a href="#">Agendamento</a></li>
             <li><a href="../logout.php">Logout</a></li>
         </ul>
     </div>
+    <?php
+    require_once('modal/Paciente.php');
+    require_once('modal/Profissional.php');
+    require_once('modal/Agenda.php');
 
-
+    try {
+        $paciente = new Paciente();
+        $profissional = new Profissional();
+        $agenda = new Agenda();
+        $listapaciente = $paciente->listar();
+        $listaprofissional = $profissional->listar();
+        $listaagenda = $agenda->listar();
+    } catch (Exception $error) {
+        echo $error->getMessage();
+    }
+    ?>
 
     <div class="tabelinha">
-        <h1>Cadrastar Funcionário</h1>
-
+        <h1>Agendamentos</h1>
         <table class="table table-striped table-hover">
             <thead>
                 <tr>
-                    <th>
-                        <span class="custom-checkbox">
-                            <input type="checkbox" id="selectAll">
-                            <label for="selectAll"></label>
-                        </span>
-                    </th>
-                    <th>ID</th>
-                    <th>Nome</th>
-                    <th>CPF</th>
-                    <th>RG</th>
+                    <th>Id</th>
+                    <th>Data</th>
+                    <th>Hora</th>
+                    <th>Paciente</th>
+                    <th>Profissional</th>
                     <th>Editar</th>
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($listaprofissional as $linha) { ?>
+                <?php foreach ($listaagenda as $linha) { ?>
                     <tr>
-                        <td>
-                            <span class="custom-checkbox">
-                                <input type="checkbox" id="checkbox1" name="options[]" value="1">
-                                <label for="checkbox1"></label>
-                            </span>
-                        </td>
-                        <td><?php echo $linha['idprofissional'] ?></td>
+                        <td><?php echo $linha['idagenda'] ?></td>
+                        <td><?php echo $linha['dtagenda'] ?></td>
+                        <td><?php echo $linha['horaagenda'] ?></td>
+                        <td><?php echo $linha['nomepaciente'] ?></td>
                         <td><?php echo $linha['nomeprofissional'] ?></td>
-                        <td><?php echo $linha['cpfprofissional'] ?></td>
-                        <td><?php echo $linha['rgprofissional'] ?></td>
                         <td>
                             <i><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
                                     <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
@@ -88,20 +84,40 @@ try {
             <!-- Modal content -->
             <div class="modal-content">
                 <span class="close">&times;</span>
-                <form class="paciente" action="../area-restrita/modal/cadastra-profissional.php" method="post">
-                    <input class="inpP" type="text" name="NomeF" placeholder="Nome">
-                    <br>
-                    <input class="inpP" type="text" name="CpfF" placeholder="CPF">
-                    <br>
-                    <input class="inpP" type="text" name="RgF" placeholder="RG">
-                    <br>
+                <form action="../area-restrita/modal/cadrasta-agenda.php" method="POST">
+                    <div class="box">
+                        <label>Data:</label><br>
+                        <input class="inpP" type="date" name="txtData">
+                        <br>
+                        <label>Hora:</label><br>
+                        <input class="inpP" type="time" name="txtHora">
+                        <br>
+                        <label>Paciente</label><br>
+                        <select class="inpP" name="paciente">
+                            <option value="0">Selecione</option>
+                            <?php foreach ($listapaciente as $linha) { ?>
+                                <option value="<?php echo $linha['idpaciente'] ?>">
+                                    <?php echo $linha['nomepaciente'] ?>
+                                </option>
+                            <?php } ?>
+                        </select>
+                        <br>
+                        <label>Profissional</label>
+                        <select class="inpP" name="profissional">
+                            <option value="0">Selecione</option>
+                            <?php foreach ($listaprofissional as $linha) { ?>
+                                <option value="<?php echo $linha['idprofissional'] ?>">
+                                    <?php echo $linha['nomeprofissional'] ?>
+                                </option>
+                            <?php } ?>
+                        </select>
+                    </div>
                     <input class="Butao" type="submit" value="Cadastrar">
                 </form>
             </div>
         </div>
-    </div>
 
-    </style>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script src="../assets/JS/Navbar.js"></script>
     <script src="../assets/JS/Modal.js"></script>
